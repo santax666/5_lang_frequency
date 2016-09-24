@@ -1,1 +1,2 @@
-# 5_lang_frequency
+Скрипт выводит 10 самых популярных слов в текстовом файле
+Введите в терминале: python3.5 lang_frequency.py file.txt
