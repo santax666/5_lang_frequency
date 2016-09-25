@@ -3,7 +3,6 @@ from collections import Counter
 import sys
 import os
 
-number_of_popular_words = 10
 
 def load_data(filepath):
     if not os.path.exists(filepath):
@@ -21,6 +20,7 @@ def get_most_frequent_words(text):
     return Counter(find_only_words).most_common(number_of_popular_words)
 
 if __name__ == '__main__':
+    number_of_popular_words = 10
     if len(sys.argv) > 1:
         if sys.argv[1] == '--help':
             print("Скрипт выводит 10 самых популярных слов в текстовом файле")
@@ -31,7 +31,7 @@ if __name__ == '__main__':
                 print("Текстовый файл не обнаружен!")
             else:
                 popular_words = get_most_frequent_words(text_file)
-                print("10 самых популярных слов в этом файле:")
+                print(number_of_popular_words, 'самых популярных слов:')
                 for words in popular_words:
                     print("==> слово '", words[0], "' частота - ", words[1])
     else:
