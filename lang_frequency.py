@@ -12,7 +12,7 @@ def load_data(filepath):
         return lowercase_text
 
 
-def get_most_frequent_words(text):
+def get_most_frequent_words(text,number_of_popular_words):
     find_only_words = re.findall(r'\w+', text)
     for word_number, word in enumerate(find_only_words):
         if not word.isalpha():
@@ -30,7 +30,7 @@ if __name__ == '__main__':
             if text_file is None:
                 print("Текстовый файл не обнаружен!")
             else:
-                popular_words = get_most_frequent_words(text_file)
+                popular_words = get_most_frequent_words(text_file,number_of_popular_words)
                 print(number_of_popular_words, 'самых популярных слов:')
                 for words in popular_words:
                     print("==> слово '", words[0], "' частота - ", words[1])
